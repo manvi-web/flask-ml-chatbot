@@ -1,8 +1,10 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
 import pandas as pd
 import os
+
+# Sample FAQ data
 data = {
     "question": [
         "What is Effort@Spoors?",
@@ -21,25 +23,19 @@ data = {
         "Go to Reports section and click on the export button to download."
     ]
 }
-df = pd.DataFrame(data)
-vectorizer = TfidfVectorizer()
-X = vectorizer.fit_transform(df["question"])
-y = df["answer"]
-model = LogisticRegression()
-model.fit(X, y)
 app = Flask(__name__)
-@app.route("/")
-def index():
-    return "FAQ Chatbot API is running!"
-@app.route("/chat", methods=["POST"])
+@app.route('/')
+def home():
+    return render_template('index.html')  
+@app.route('/chat', methods=['POST'])
 def chat():
-    user_input = request.json.get("message")
-    if not user_input:
-        return jsonify({"error": "No message provided"}), 400
-
-    X_input = vectorizer.transform([user_input])
+    data = request.get_json()
+    question = data.get("question", "")
+    if not question:
+        return jsonify({"answer": "Please enter a valid question."})
+    X_input = vectorizer.transform([question])
     prediction = model.predict(X_input)[0]
-    return jsonify({"response": prediction})
-if __name__ == "__main__":
+    return jsonify({"answer": prediction})
+if __name__ == '__main__':
     port = int(os.environ.get("PORT", 10000))
-    app.run(host="0.0.0.0", port=port)
+    app.run(host='0.0.0.0', port=port)
