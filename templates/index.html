@@ -5,16 +5,15 @@
   <script>
     async function sendMessage() {
       const userMessage = document.getElementById("message").value;
-      const response = await fetch("https://your-render-url.onrender.com/chat", {
+      const response = await fetch("https://your-api.onrender.com/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify({ message: userMessage })
+        body: JSON.stringify({ question: userMessage })  // 
       });
       const data = await response.json();
-      document.getElementById("response").innerText = data.response;
-    }
+      document.getElementById("response").innerText = data.answer; 
   </script>
 </head>
 <body>
