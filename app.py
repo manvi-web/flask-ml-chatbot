@@ -4,7 +4,7 @@ from sklearn.linear_model import LogisticRegression
 import pandas as pd
 import os
 
-# Sample FAQ data
+
 data = {
     "question": [
         "What is Effort@Spoors?",
