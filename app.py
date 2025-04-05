@@ -23,6 +23,8 @@ data = {
         "Go to Reports section and click on the export button to download."
     ]
 }
+df = pd.DataFrame(data)
+
 vectorizer = TfidfVectorizer()
 X = vectorizer.fit_transform(df["question"])
 y = df["answer"]
