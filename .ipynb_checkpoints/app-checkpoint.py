@@ -4,7 +4,7 @@ from sklearn.linear_model import LogisticRegression
 import pandas as pd
 import os
 
-# Sample FAQ data
+
 data = {
     "question": [
         "What is Effort@Spoors?",
@@ -23,6 +23,13 @@ data = {
         "Go to Reports section and click on the export button to download."
     ]
 }
+vectorizer = TfidfVectorizer()
+X = vectorizer.fit_transform(df["question"])
+y = df["answer"]
+
+model = LogisticRegression()
+model.fit(X, y)
+
 app = Flask(__name__)
 @app.route('/')
 def home():
