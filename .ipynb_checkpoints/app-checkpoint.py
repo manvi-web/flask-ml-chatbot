@@ -25,7 +25,7 @@ def chat():
     
     X_input = vectorizer.transform([question])
     prediction = model.predict(X_input)[0]
-    
+     prediction = prediction.replace("\n", "<br>")
     return jsonify({"answer": prediction})
 
 if __name__ == '__main__':
