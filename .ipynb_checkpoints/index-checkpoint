@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Predict Fields for a Form</title>
+</head>
+<body>
+    <h1>Predict Fields for a Form</h1>
+
+    <form action="/predict" method="POST">
+        <label for="formname">Enter Form Name:</label>
+        <input type="text" id="formname" name="formname" required>
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if fields %}
+        <h2>Predicted Fields:</h2>
+        <ul>
+            {% for field in fields %}
+                <li>{{ field }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</body>
+</html>
+
