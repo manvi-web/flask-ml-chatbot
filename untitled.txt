@@ -1,0 +1,106 @@
+import pandas as pd
+df = pd.read_csv("faq_dataset.csv")  # Make sure the file exists in your working directory
+new_faqs = [
+    {
+        "question": "How to create a customer?",
+        "answer": "- Open the Effort@Spoors web app\n"
+                  "- From the left sidebar, click on 'Customers'\n"
+                  "- Click on the '+ Add Customer' button\n"
+                  "- Fill in the required details such as:\n"
+                  "  • Customer Name\n"
+                  "  • Phone Number\n"
+                  "  • Address\n"
+                  "  • Any applicable custom fields\n"
+                  "- Click 'Save' to create the customer profile."
+    },
+    {
+        "question": "How to create forms?",
+        "answer": "- Navigate to 'Forms' section in the configurator\n"
+                  "- Click on 'Create Form'\n"
+                  "- Add required fields by selecting from available field types (text, number, dropdown, etc)\n"
+                  "- Set validations and configurations if needed\n"
+                  "- Click 'Save' to create the form."
+    },
+    {
+        "question": "How to create an employee?",
+        "answer": "- Navigate to the 'Employees' section in the web app\n"
+                  "- Click on 'Add Employee'\n"
+                  "- Enter employee details like:\n"
+                  "  • Name\n"
+                  "  • Phone Number\n"
+                  "  • Email ID\n"
+                  "- Assign roles or access permissions as needed\n"
+                  "- Click 'Save' to add the employee to your team."
+    },
+    {
+        "question": "How to create a work process?",
+        "answer": "- Navigate to 'Process' section in the configurator\n"
+                  "- Click on 'New Process'\n"
+                  "- Choose between Activity process, Checklist process, or Approval process\n"
+                  "- Define the stages involved in the process\n"
+                  "- Assign forms, employees, and rules to each stage\n"
+                  "- Click 'Save' to create the workflow."
+    },
+    {
+        "question": "How does Routes work?",
+        "answer": "- Navigate to the 'Routes' section in the web app\n"
+                  "- Click on 'Create Route Plan'\n"
+                  "- You can also import route plans"
+    }
+]
+new_df = pd.DataFrame(new_faqs)
+df = pd.concat([df, new_df], ignore_index=True)
+df.to_csv("faq_dataset.csv", index=False)
+import pandas as pd
+df = pd.read_csv("faq_dataset.csv")  # Make sure the file exists in your working directory
+new_faqs = [
+    {
+        "question": "How to create a customer?",
+        "answer": "- Open the Effort@Spoors web app\n"
+                  "- From the left sidebar, click on 'Customers'\n"
+                  "- Click on the '+ Add Customer' button\n"
+                  "- Fill in the required details such as:\n"
+                  "  • Customer Name\n"
+                  "  • Phone Number\n"
+                  "  • Address\n"
+                  "  • Any applicable custom fields\n"
+                  "- Click 'Save' to create the customer profile."
+    },
+    {
+        "question": "How to create forms?",
+        "answer": "- Navigate to 'Forms' section in the configurator\n"
+                  "- Click on 'Create Form'\n"
+                  "- Add required fields by selecting from available field types (text, number, dropdown, etc)\n"
+                  "- Set validations and configurations if needed\n"
+                  "- Click 'Save' to create the form."
+    },
+    {
+        "question": "How to create an employee?",
+        "answer": "- Navigate to the 'Employees' section in the web app\n"
+                  "- Click on 'Add Employee'\n"
+                  "- Enter employee details like:\n"
+                  "  • Name\n"
+                  "  • Phone Number\n"
+                  "  • Email ID\n"
+                  "- Assign roles or access permissions as needed\n"
+                  "- Click 'Save' to add the employee to your team."
+    },
+    {
+        "question": "How to create a work process?",
+        "answer": "- Navigate to 'Process' section in the configurator\n"
+                  "- Click on 'New Process'\n"
+                  "- Choose between Activity process, Checklist process, or Approval process\n"
+                  "- Define the stages involved in the process\n"
+                  "- Assign forms, employees, and rules to each stage\n"
+                  "- Click 'Save' to create the workflow."
+    },
+    {
+        "question": "How does Routes work?",
+        "answer": "- Navigate to the 'Routes' section in the web app\n"
+                  "- Click on 'Create Route Plan'\n"
+                  "- You can also import route plans"
+    }
+]
+new_df = pd.DataFrame(new_faqs)
+df = pd.concat([df, new_df], ignore_index=True)
+df.to_csv("faq_dataset.csv", index=False)
