@@ -4,25 +4,9 @@ from sklearn.linear_model import LogisticRegression
 import pandas as pd
 import os
 
+def load_faqs():
+    return pd.read_csv("faq_dataset.csv")
 
-data = {
-    "question": [
-        "What is Effort@Spoors?",
-        "How can I reset my password?",
-        "How do I track my tasks?",
-        "Can I use Effort on mobile?",
-        "How do I contact support?",
-        "How to export my reports?"
-    ],
-    "answer": [
-        "Effort@Spoors is a no-code platform for business process automation.",
-        "You can reset your password by clicking 'Forgot Password' on the login screen.",
-        "Track your tasks by navigating to the Tasks tab in the dashboard.",
-        "Yes, Effort is available on Android and iOS.",
-        "You can contact support via support@spoors.in.",
-        "Go to Reports section and click on the export button to download."
-    ]
-}
 df = pd.DataFrame(data)
 
 vectorizer = TfidfVectorizer()
