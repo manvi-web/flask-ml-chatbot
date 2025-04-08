@@ -1,21 +1,28 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>Effort@Spoors Chatbot</title>
+  </head>
   <body>
     <h3>Ask something:</h3>
-    <input id="msg">
+    <input id="msg" placeholder="Type your question">
     <button onclick="send()">Send</button>
-    <p id="ans"></p>
+    <p id="ans" style="white-space: pre-line;"></p>
 
     <script>
       function send() {
-        fetch("https://your-flask-app.onrender.com/chat", {
+        fetch("/chat", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ question: document.getElementById("msg").value })
         })
         .then(res => res.json())
         .then(data => {
-          document.getElementById("ans").innerText = data.answer;
+          console.log("Response:", data); // for debugging
+          document.getElementById("ans").innerHTML = data.answer;
+        })
+        .catch(err => {
+          document.getElementById("ans").innerText = "Error connecting to server.";
         });
       }
     </script>
