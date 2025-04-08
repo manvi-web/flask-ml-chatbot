@@ -14,7 +14,7 @@ model.fit(X, y)
 app = Flask(__name__)
 @app.route('/')
 def home():
-    return render_template('index.html') 
+    return render_template('index.html')
 @app.route('/chat', methods=['POST'])
 def chat():
     data = request.get_json()
@@ -22,10 +22,13 @@ def chat():
     
     if not question:
         return jsonify({"answer": "Please enter a valid question."})
-    
+
     X_input = vectorizer.transform([question])
     prediction = model.predict(X_input)[0]
-     prediction = prediction.replace("\n", "<br>")
+
+    
+    prediction = prediction.replace("\n", "<br>")
+
     return jsonify({"answer": prediction})
 
 if __name__ == '__main__':
