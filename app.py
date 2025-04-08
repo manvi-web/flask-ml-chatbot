@@ -6,9 +6,6 @@ import os
 
 def load_faqs():
     return pd.read_csv("faq_dataset.csv")
-
-df = pd.DataFrame(data)
-
 vectorizer = TfidfVectorizer()
 X = vectorizer.fit_transform(df["question"])
 y = df["answer"]
