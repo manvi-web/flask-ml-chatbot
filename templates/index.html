@@ -15,8 +15,7 @@
         })
         .then(res => res.json())
         .then(data => {
-         
-          document.getElementById("ans").innerHTML = data.answer;
+          document.getElementById("ans").innerText = data.answer;
         });
       }
     </script>
