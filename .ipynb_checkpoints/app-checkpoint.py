@@ -12,9 +12,6 @@ y = df["answer"]
 model = LogisticRegression()
 model.fit(X, y)
 app = Flask(__name__)
-@app.route('/')
-def home():
-    return render_template('index.html') 
 @app.route('/chat', methods=['POST'])
 def chat():
     data = request.get_json()
@@ -25,9 +22,8 @@ def chat():
     
     X_input = vectorizer.transform([question])
     prediction = model.predict(X_input)[0]
-     prediction = prediction.replace("\n", "<br>")
+    prediction = prediction.replace("\n", "<br>") 
     return jsonify({"answer": prediction})
-
 if __name__ == '__main__':
     port = int(os.environ.get("PORT", 10000))
     app.run(host='0.0.0.0', port=port)
