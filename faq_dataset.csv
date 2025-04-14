@@ -1,31 +1,32 @@
 question,answer
-What is Effort@Spoors and how does it work?,Effort@Spoors is a no-code platform that helps businesses build and manage mobile-first workflow and field-force automation apps.
-Is Effort a no-code or low-code platform?,"Effort is a no-code platform, meaning you can build apps without writing code."
-What types of apps can I build with Effort?,"You can build apps for field service, sales tracking, inspections, data collection, and many other use cases."
-Can I automate field operations using Effort?,"Yes, Effort is built specifically to automate field operations with features like location tracking and task assignments."
-Is Effort suitable for sales and service teams?,"Absolutely, Effort is ideal for both sales and service teams to manage their field activities efficiently."
-How do I create workflows in Effort without coding?,Effort provides a drag-and-drop interface to design workflows without any programming knowledge.
-Can I integrate Effort with third-party tools like CRM or ERP?,"Yes, Effort supports integrations with many CRMs, ERPs, and third-party APIs."
-What industries use Effort the most?,"Industries like FMCG, Pharma, BFSI, Logistics, and Retail commonly use Effort."
-Does Effort offer mobile app support for field teams?,"Yes, Effort provides mobile apps for Android and iOS to support field teams on the go."
-How can I manage tasks and team members using Effort?,"You can assign tasks, track progress, and manage users through the admin dashboard."
-Is there a reporting dashboard in Effort?,"Yes, Effort provides powerful dashboards for real-time insights and reports."
-What kind of support does Effort provide?,"Effort offers onboarding help, documentation, training, and customer support via chat and email."
-Can I customize forms and approval flows in Effort?,"Yes, you can fully customize forms, workflows, and approval logic using the visual builder."
-Does Effort offer offline mode for field staff?,"Yes, Effort supports offline functionality, syncing data once the device is back online."
-How secure is the Effort platform?,Effort follows enterprise-grade security protocols including data encryption and secure access control.
-How much does Effort cost? Is there a free trial?,Effort offers flexible pricing. Contact their sales team for details. A trial is also available.
-Can I export reports or data from Effort?,"Yes, reports and data can be exported in formats like Excel and PDF."
-How do I onboard new users in Effort?,"Admins can easily add users, assign roles, and invite them to the platform."
-Is there a training module or help center available?,"Yes, there's a comprehensive help center, documentation, and training webinars."
-Can I track the real-time location of my field agents?,"Yes, Effort includes live GPS tracking for field agents and route optimization tools."
-How to create a customer?,"- Open the Effort@Spoors web app- From the left sidebar, click on 'Customers'- Click on the '+ Add Customer' button- Fill in the required details such as:  • Customer Name  • Phone Number  • Address  • Any applicable custom fields- Click 'Save' to create the customer profile."
-How to create forms?,"- Navigate to 'Forms' section in the configurator- Click on 'Create Form'.- Add required fields by selecting from available field types (text, number, dropdown, etc).- Set validations and configurations if needed.- Click 'Save' to create the form."
-How to create an employee?,- Navigate to the 'Employees'section in the web app.- Click on'Add Employee'- Enter employee details like:  • Name   • Phone Number  • Email ID- Assign roles or access permissions as needed.- Click 'Save' to add the employee to your team.
-How to create a work process?,"-Navigate to 'Process' section in the configurator- Click on 'New Process'-choose between Activity process, Checklist process or Approval process- Define the stages involved in the process.- Assign forms, employees, and rules to each stage.- Click 'Save'to create the workflow."
-How does Routes work?,- Navigate to Routes section in Webapp.- click on create 'Route plan' you can also import route plans
-How to create a customer?,"- Open the Effort@Spoors web app- From the left sidebar, click on 'Customers'- Click on the '+ Add Customer' button- Fill in the required details such as:  • Customer Name  • Phone Number  • Address  • Any applicable custom fields- Click 'Save' to create the customer profile."
-How to create forms?,"- Navigate to 'Forms' section in the configurator- Click on 'Create Form'.- Add required fields by selecting from available field types (text, number, dropdown, etc).- Set validations and configurations if needed.- Click 'Save' to create the form."
-How to create an employee?,- Navigate to the 'Employees'section in the web app.- Click on'Add Employee'- Enter employee details like:  • Name   • Phone Number  • Email ID- Assign roles or access permissions as needed.- Click 'Save' to add the employee to your team.
-How to create a work process?,"-Navigate to 'Process' section in the configurator- Click on 'New Process'-choose between Activity process, Checklist process or Approval process- Define the stages involved in the process.- Assign forms, employees, and rules to each stage.- Click 'Save'to create the workflow."
-How does Routes work?,- Navigate to Routes section in Webapp.- click on create 'Route plan' you can also import route plans
+How to create a customer?,"- Open the Effort@Spoors web app. 
+- From the left sidebar, click on 'Customers'. 
+- Click on the '+ Add Customer' button. 
+- Fill in the required details: 
+• Customer Name 
+• Phone Number 
+• Address 
+• Any applicable custom fields. 
+- Click 'Save' to create the customer profile."
+How to create forms?,"- Navigate to 'Forms' section in the configurator. 
+- Click on 'Create Form'. 
+- Add required fields by selecting from available field types (text, number, dropdown, etc.). 
+- Set validations and configurations if needed. 
+- Click 'Save' to create the form."
+How to create an employee?,"- Navigate to the 'Employees' section in the web app. 
+- Click on 'Add Employee'. 
+- Enter employee details like: 
+• Name 
+• Phone Number 
+• Email ID. 
+- Assign roles or access permissions as needed. 
+- Click 'Save' to add the employee to your team."
+How to create a work process?,"- Navigate to 'Process' section in the configurator. 
+- Click on 'New Process'. 
+- Choose between Activity process, Checklist process, or Approval process. 
+- Define the stages involved in the process. 
+- Assign forms, employees, and rules to each stage. 
+- Click 'Save' to create the workflow."
+How does Routes work?,"- Navigate to the Routes section in the Webapp. 
+- Click on 'Create Route plan'. 
+- You can also import route plans."
