@@ -27,8 +27,8 @@
                 return;
             }
 
-            // Send POST request to Flask backend
-            fetch('http://127.0.0.1:10000/chat', {
+            // Send POST request to Flask backend on Render
+            fetch('https://flask-ml-chatbot-3.onrender.com/chat', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ "question": question })
@@ -44,4 +44,4 @@
         }
     </script>
 </body>
-</html> 
+</html>

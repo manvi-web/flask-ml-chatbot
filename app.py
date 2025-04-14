@@ -1,9 +1,11 @@
 from flask import Flask, request, jsonify, render_template
+from flask_cors import CORS
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 import os
 app = Flask(__name__)
+CORS(app)
 df = pd.read_csv("faq_dataset.csv")
 vectorizer = TfidfVectorizer()
 tfidf_matrix = vectorizer.fit_transform(df['question'])
