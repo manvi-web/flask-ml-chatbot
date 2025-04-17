@@ -1,10 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Hello</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Field Prediction</title>
 </head>
 <body>
-    <h2>Hello World!</h2>
+    <h1>Predict Fields for a Form Name</h1>
+
+    <!-- Form to enter the Form Name -->
+    <form action="/predict" method="POST">
+        <label for="formname">Enter Form Name:</label>
+        <input type="text" id="formname" name="formname" required>
+        <button type="submit">Submit</button>
+    </form>
+
+    {% if fields %}
+        <h2>Predicted Fields:</h2>
+        <ul>
+            {% for field in fields %}
+                <li>{{ field }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
 </body>
 </html>
