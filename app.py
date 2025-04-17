@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify
 import pandas as pd
+import os
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 df = pd.read_csv("effort_manual_data.csv")
@@ -25,4 +26,5 @@ def ask():
         "answer": texts[index]
     })
 if __name__ == '__main__':
-    app.run(debug=True, port=10000)
+    port = int(os.environ.get("PORT", 10000))  
+    app.run(host='0.0.0.0', port=port, debug=True)
