@@ -16,7 +16,7 @@ def index():
         similarity = cosine_similarity(question_vec, X)
         best_match_index = similarity.argmax()
         answer = texts[best_match_index]
-    return render_template("index", answer=answer)
+    return render_template("index.html", answer=answer)
 
 if __name__ == '__main__':
     import os
