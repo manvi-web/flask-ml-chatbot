@@ -1,32 +1,29 @@
-from flask import Flask, request, jsonify, render_template
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.linear_model import LogisticRegression
+from flask import Flask, request, render_template, jsonify
 import pandas as pd
-import os
-def load_faqs():
-    return pd.read_csv("faq_dataset.csv")
-df = load_faqs()
-vectorizer = TfidfVectorizer()
-X = vectorizer.fit_transform(df["question"])
-y = df["answer"]
-model = LogisticRegression()
-model.fit(X, y)
+from sklearn.feature_extraction.text import TfidfVectorizer
+from sklearn.metrics.pairwise import cosine_similarity
+
 app = Flask(__name__)
-@app.route('/')
+
+# Load the extracted Effort manual content
+df = pd.read_csv("effort_manual_data.csv")  # Make sure this is deployed with the app
+vectorizer = TfidfVectorizer()
+X = vectorizer.fit_transform(df['content'].fillna(""))
+
+@app.route("/")
 def home():
-    return render_template('index.html')
-@app.route('/chat', methods=['POST'])
-def chat():
-    data = request.get_json()
-    question = data.get("question", "")
-    
-    if not question:
-        return jsonify({"answer": "Please enter a valid question."})
-    
-    X_input = vectorizer.transform([question])
-    prediction = model.predict(X_input)[0]
-    prediction = prediction.replace("\n", "<br>") 
-    return jsonify({"answer": prediction})
-if __name__ == '__main__':
+    return render_template("index.html")
+
+@app.route("/ask", methods=["POST"])
+def ask():
+    question = request.form["question"]
+    q_vec = vectorizer.transform([question])
+    sim = cosine_similarity(q_vec, X)
+    best_idx = sim.argmax()
+    answer = df.iloc[best_idx]["content"]
+    return jsonify({"answer": answer})
+
+if __name__ == "__main__":
+    import os
     port = int(os.environ.get("PORT", 10000))
-    app.run(host='0.0.0.0', port=port)
+    app.run(debug=True, host="0.0.0.0", port=port)
