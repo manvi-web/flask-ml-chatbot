@@ -1,47 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ Chatbot</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Hello</title>
 </head>
 <body>
-    <h2>FAQ Chatbot</h2>
-    <div>
-        <input type="text" id="question" placeholder="Ask a question">
-        <button onclick="getAnswer()">Ask</button>
-    </div>
-    
-    <div>
-        <h3>Answer:</h3>
-        <p id="answer"></p>
-    </div>
-
-    <script>
-        function getAnswer() {
-            const question = document.getElementById('question').value;
-
-            // Ensure the question is not empty
-            if (question.trim() === "") {
-                document.getElementById('answer').innerText = "Please enter a question!";
-                return;
-            }
-
-            // Send POST request to Flask backend on Render
-            fetch('https://flask-ml-chatbot-3.onrender.com/chat', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ "question": question })
-            })
-            .then(response => response.json())
-            .then(data => {
-                const answerText = data.answer || "Sorry, I didn't get that.";
-                document.getElementById('answer').innerHTML = answerText.replace(/\n/g, "<br>");
-            })
-            .catch(error => {
-                document.getElementById('answer').innerText = "Error fetching answer.";
-            });
-        }
-    </script>
+    <h2>Hello World!</h2>
 </body>
 </html>
