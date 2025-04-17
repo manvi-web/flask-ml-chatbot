@@ -1,22 +1,23 @@
-from flask import Flask, request, render_template
+from flask import Flask, render_template, request
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 app = Flask(__name__)
 df = pd.read_csv("effort_manual_data.csv")
+texts = df["content"].fillna("").astype(str).tolist()
 vectorizer = TfidfVectorizer()
-X = vectorizer.fit_transform(df["content"].fillna(""))
-@app.route('/')
+X = vectorizer.fit_transform(texts)
+@app.route("/", methods=["GET", "POST"])
 def index():
-    return render_template('index.html')
-@app.route('/get-answer', methods=['POST'])
-def get_answer():
-    user_question = request.form['question']
-    question_vec = vectorizer.transform([user_question])
-    similarities = cosine_similarity(question_vec, X)
-    most_similar_idx = similarities.argmax()
-    answer = df.iloc[most_similar_idx]["content"]
-    return render_template('index.html', answer=answer, question=user_question)
+    answer = ""
+    if request.method == "POST":
+        question = request.form["question"]
+        question_vec = vectorizer.transform([question])
+        similarity = cosine_similarity(question_vec, X)
+        best_match_index = similarity.argmax()
+        answer = texts[best_match_index]
+    return render_template("index", answer=answer)
+
 if __name__ == '__main__':
     import os
     port = int(os.environ.get("PORT", 10000))
